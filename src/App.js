@@ -2,6 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import './components/ColourComponent/ColourComponent';
+import ColourComponent from './components/ColourComponent/ColourComponent';
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +22,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <ColourComponent hexCode="#000000" name="Black" background="#000000"/>
     </div>
   );
 }
