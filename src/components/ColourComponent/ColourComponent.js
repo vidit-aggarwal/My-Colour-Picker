@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { rgb } from "polished";
 import { hexToRgb } from "./../../utils/CommonUtilities";
+import styles from "./ColourComponent.module.css";
 
 function ColourComponent(props) {
   if (props.hexCode) {
@@ -17,7 +18,7 @@ function ColourComponent(props) {
     const hexCode = props.hexCode;
 
     return (
-      <Wrapper>
+      <Wrapper className={styles.card}>
         <p>{name}</p>
         <p>{hexCode}</p>
       </Wrapper>

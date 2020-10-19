@@ -1,0 +1,7 @@
+.card {
+  height: 100px;
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
