@@ -10,8 +10,6 @@ function ColourComponent(props) {
       background-color: ${rgb(...hexToRgb(props.hexCode))};
       color: ${props.textColour ? props.textColour : "white"};
       font-size: 1em;
-      margin: 1em;
-      padding: 0.25em 1em;
     `;
 
     const name = props.name ? props.name : "Not Found";
@@ -19,8 +17,10 @@ function ColourComponent(props) {
 
     return (
       <Wrapper className={styles.card}>
-        <p>{name}</p>
-        <p>{hexCode}</p>
+        <div className={styles.content}>
+          <p>{name}</p>
+          <p>{hexCode}</p>
+        </div>
       </Wrapper>
     );
   } else {
