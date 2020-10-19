@@ -8,7 +8,7 @@ import data from "./data/Color.json";
 
 const App = () => {
   const [colourDb, setColourDb] = useState(null);
-  const [currentProfile, setCurrentProfile] = useState(0);
+  const [currentProfile, ] = useState(0);
 
   useEffect(() => {
     if (colourDb) return;
