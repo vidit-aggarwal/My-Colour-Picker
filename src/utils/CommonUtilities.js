@@ -8,3 +8,7 @@ export const hexToRgb = (hexCode) => {
       ]
     : null;
 };
+
+export const getOrDefault = (map, key, defaultValue) => {
+  return map.has(key) ? map.get(key) : defaultValue;
+}
