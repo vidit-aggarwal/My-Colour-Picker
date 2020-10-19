@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import "./components/ColourComponent/ColourComponent";
+import ColourPalette from "./components/ColourPalette/ColourPalette";
+
+import data from "./data/Color.json";
+
+const App = () => {
+  const [colourDb, setColourDb] = useState(null);
+  const [currentProfile, setCurrentProfile] = useState(0);
+
+  useEffect(() => {
+    if (colourDb) return;
+
+    let colourProfiles = new Map();
+
+    data.forEach((profile) => {
+      colourProfiles.set(profile.id, profile);
+    });
+
+    setColourDb(colourProfiles);
+  }, [colourDb]);
+
+  if (colourDb)
+    return (
+      <div>
+        <ColourPalette data={colourDb} index={currentProfile}></ColourPalette>
+      </div>
+    );
+  else return <div>Loading</div>;
+};
 
 export default App;

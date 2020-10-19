@@ -1,0 +1,56 @@
+[
+  {
+    "id": 0,
+    "name": "Bootstrap 4",
+    "colours": [
+      {
+        "id": 0,
+        "name": "Primary",
+        "hexCode": "#007bff",
+        "inverse": "#ffffff"
+      },
+      {
+        "id": 1,
+        "name": "Secondary",
+        "hexCode": "#6c757d",
+        "inverse": "#ffffff"
+      },
+      {
+        "id": 2,
+        "name": "Success",
+        "hexCode": "#28a745",
+        "inverse": "#ffffff"
+      },
+      {
+        "id": 3,
+        "name": "Info",
+        "hexCode": "#17a2b8",
+        "inverse": "#ffffff"
+      },
+      {
+        "id": 4,
+        "name": "Warning",
+        "hexCode": "#ffc107",
+        "inverse": "#000000"
+      },
+      {
+        "id": 5,
+        "name": "Danger",
+        "hexCode": "#dc3545",
+        "inverse": "#ffffff"
+      },
+      {
+        "id": 6,
+        "name": "Light",
+        "hexCode": "#f8f9fa",
+        "inverse": "#000000"
+      },
+      {
+        "id": 7,
+        "name": "Dark",
+        "hexCode": "#343a40",
+        "inverse": "#ffffff"
+      }
+    ]
+  }
+]
