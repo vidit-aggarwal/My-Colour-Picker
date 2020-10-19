@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { rgb } from "polished";
-import { hexToRgb } from "./../../utils/CommonUtilities";
+import { hexToRgb, copyText } from "./../../utils/CommonUtilities";
 import styles from "./ColourComponent.module.css";
 
 function ColourComponent(props) {
@@ -16,7 +16,12 @@ function ColourComponent(props) {
     const hexCode = props.hexCode;
 
     return (
-      <Wrapper className={styles.card}>
+      <Wrapper
+        className={styles.card}
+        onClick={() => {
+          copyText(hexCode);
+        }}
+      >
         <div className={styles.content}>
           <p>{name}</p>
           <p>{hexCode}</p>
