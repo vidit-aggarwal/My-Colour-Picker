@@ -2,6 +2,8 @@ import React from "react";
 import { getOrDefault } from "../../utils/CommonUtilities";
 import ColourComponent from "../ColourComponent/ColourComponent";
 
+import styles from "./ColourPalette.module.css";
+
 const ColourPalette = (props) => {
   if (!props.data) {
     return;
@@ -22,7 +24,7 @@ const ColourPalette = (props) => {
     ></ColourComponent>
   ));
 
-  return colours;
+  return <div className={styles.palette}>{colours}</div>;
 };
 
 export default ColourPalette;
