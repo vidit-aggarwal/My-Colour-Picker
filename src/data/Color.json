@@ -2,6 +2,9 @@
   {
     "id": 0,
     "name": "Bootstrap 4",
+    "backgroundImage": "https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social.png",
+    "backgroundColour": "#563d7c",
+    "inverse": "#ffffff",
     "colours": [
       {
         "id": 0,
@@ -52,5 +55,13 @@
         "inverse": "#ffffff"
       }
     ]
+  },
+  {
+    "id": 1,
+    "name": "Brands",
+    "backgroundImage": "https://postcron.com/en/blog/wp-content/uploads/2018/02/socialmedia.png",
+    "backgroundColour": "#563d7c",
+    "inverse": "#ffffff",
+    "colours": []
   }
 ]
