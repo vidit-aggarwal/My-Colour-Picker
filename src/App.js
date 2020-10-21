@@ -10,11 +10,20 @@ import data from "./data/Color.json";
 
 const App = () => {
   const [colourDb, setColourDb] = useState(null);
-  const [currentProfile] = useState(0);
+  const [currentProfile, setCurrentProfile] = useState(0);
 
   const Wrapper = styled.div`
     display: flex;
   `;
+
+  const changeProfile = (newProfile) => {
+    if (
+      newProfile !== currentProfile &&
+      newProfile >= 0 &&
+      newProfile < data.length
+    )
+      setCurrentProfile(newProfile);
+  };
 
   useEffect(() => {
     if (colourDb) return;
@@ -31,7 +40,7 @@ const App = () => {
   if (colourDb)
     return (
       <Wrapper>
-        <Sidebar data={colourDb}></Sidebar>
+        <Sidebar data={colourDb} changeProfile={changeProfile}></Sidebar>
         <ColourPalette data={colourDb} index={currentProfile}></ColourPalette>
       </Wrapper>
     );

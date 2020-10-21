@@ -32,7 +32,7 @@ const SidebarEntry = (props) => {
   `;
 
   return (
-    <Wrapper>
+    <Wrapper onClick={props.changeProfile}>
       <Content>{props.name}</Content>
     </Wrapper>
   );
