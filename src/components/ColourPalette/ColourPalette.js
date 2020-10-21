@@ -27,6 +27,7 @@ const ColourPalette = (props) => {
       name={colour.name}
       hexCode={colour.hexCode}
       textColour={colour.inverse}
+      shadowColour={colour.secondary}
     ></ColourComponent>
   ));
 
