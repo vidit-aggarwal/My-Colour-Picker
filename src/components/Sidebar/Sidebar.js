@@ -23,7 +23,11 @@ const Sidebar = (props) => {
         key={"profile__" + key.id}
         backgroundImage={key.backgroundImage}
         backgroundColour={key.backgroundColour}
-        changeProfile={() => {props.changeProfile(key.id)}}
+        inverse={key.inverse}
+        changeProfile={() => {
+          props.changeProfile(key.id);
+        }}
+        active={props.index === key.id}
       ></SidebarEntry>
     );
   });
