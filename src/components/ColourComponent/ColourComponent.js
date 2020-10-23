@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { rgb } from "polished";
 import { hexToRgb, copyText } from "./../../utils/CommonUtilities";
 import styles from "./ColourComponent.module.css";
+import notification from "../Notification/Notification";
 
 function ColourComponent(props) {
   var hasSecondary = false;
@@ -29,7 +30,7 @@ function ColourComponent(props) {
       <Wrapper
         className={styles.card}
         onClick={() => {
-          copyText(hexCode);
+          copyText(hexCode, notification);
         }}
       >
         <div className={styles.content}>

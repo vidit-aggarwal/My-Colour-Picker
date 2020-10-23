@@ -13,13 +13,26 @@ export const getOrDefault = (map, key, defaultValue) => {
   return map.has(key) ? map.get(key) : defaultValue;
 };
 
-export const copyText = (text, id = null) => {
-  if (navigator.clipboard) navigator.clipboard.writeText(text);
-  else if (window.clipboard) window.clipboard.copyText(text);
-  else fallbackCopyTextToClipboard(text);
+export const copyText = (text, followUp = null) => {
+  if (!followUp) {
+    followUp = (...args) => {};
+  }
+  if (navigator.clipboard) {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => followUp(text))
+      .catch((e) => followUp(null));
+  } else if (window.clipboardData) {
+    window.clipboardData.setData("data", text)
+      ? followUp(text)
+      : followUp(null);
+  } else fallbackCopyTextToClipboard(text, followUp);
 };
 
-export const fallbackCopyTextToClipboard = (text) => {
+export const fallbackCopyTextToClipboard = (text, followUp = null) => {
+  if (!followUp) {
+    followUp = (...args) => {};
+  }
   var textArea = document.createElement("textarea");
   textArea.value = text;
 
@@ -32,12 +45,10 @@ export const fallbackCopyTextToClipboard = (text) => {
   textArea.focus();
   textArea.select();
 
+  var successful = false;
   try {
-    var successful = document.execCommand("copy");
-    if (!successful) alert("Copy not supported on your device");
-  } catch (err) {
-    alert("Copy not supported on your device");
-  }
-
+    successful = document.execCommand("copy");
+  } catch (err) {}
   document.body.removeChild(textArea);
+  successful ? followUp(text) : followUp(null);
 };
