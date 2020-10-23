@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { ToastContainer } from "react-toastify";
 import styled from "styled-components";
-import "./App.css";
 
-import "./components/ColourComponent/ColourComponent";
+// Importing Components
 import ColourPalette from "./components/ColourPalette/ColourPalette";
 import Sidebar from "./components/Sidebar/Sidebar";
 
+// Importing CSS
+import "./App.css";
+import "react-toastify/dist/ReactToastify.min.css";
+
+// Importing Extra data
 import data from "./data/Color.json";
 
 const App = () => {
@@ -42,6 +47,15 @@ const App = () => {
       <Wrapper>
         <Sidebar data={colourDb} changeProfile={changeProfile}></Sidebar>
         <ColourPalette data={colourDb} index={currentProfile}></ColourPalette>
+        <ToastContainer
+          limit={3}
+          newestOnTop={true}
+          position="bottom-right"
+          draggable={true}
+          draggablePercent={50}
+          closeButton={false}
+          autoClose={2000}
+        ></ToastContainer>
       </Wrapper>
     );
   else return <div>Loading</div>;
