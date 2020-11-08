@@ -7,7 +7,7 @@ import ColourPalette from "./components/ColourPalette/ColourPalette";
 import Sidebar from "./components/Sidebar/Sidebar";
 
 // Importing CSS
-import "./App.css";
+import style from "./App.module.css";
 import "react-toastify/dist/ReactToastify.min.css";
 
 // Importing Extra data
@@ -44,7 +44,7 @@ const App = () => {
 
   if (colourDb)
     return (
-      <Wrapper>
+      <Wrapper className={style.App}>
         <Sidebar data={colourDb} changeProfile={changeProfile}></Sidebar>
         <ColourPalette data={colourDb} index={currentProfile}></ColourPalette>
         <ToastContainer
