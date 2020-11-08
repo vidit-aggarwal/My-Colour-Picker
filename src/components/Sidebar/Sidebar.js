@@ -10,7 +10,6 @@ const Sidebar = (props) => {
 
   const content = [];
   props.data.forEach((key, value) => {
-    console.log("Sidebar elem = ", key, value);
     content.push(
       <SidebarEntry
         name={key.name}

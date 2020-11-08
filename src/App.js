@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
-import styled from "styled-components";
 
 // Importing Components
 import ColourPalette from "./components/ColourPalette/ColourPalette";
@@ -16,10 +15,6 @@ import data from "./data/Color.json";
 const App = () => {
   const [colourDb, setColourDb] = useState(null);
   const [currentProfile, setCurrentProfile] = useState(0);
-
-  const Wrapper = styled.div`
-    display: flex;
-  `;
 
   const changeProfile = (newProfile) => {
     if (
@@ -44,7 +39,7 @@ const App = () => {
 
   if (colourDb)
     return (
-      <Wrapper className={style.App}>
+      <div className={style.App}>
         <Sidebar data={colourDb} changeProfile={changeProfile}></Sidebar>
         <ColourPalette data={colourDb} index={currentProfile}></ColourPalette>
         <ToastContainer
@@ -56,7 +51,7 @@ const App = () => {
           closeButton={false}
           autoClose={2000}
         ></ToastContainer>
-      </Wrapper>
+      </div>
     );
   else return <div>Loading</div>;
 };

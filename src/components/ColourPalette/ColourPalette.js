@@ -1,17 +1,10 @@
 import React from "react";
-import styled from "styled-components";
 import { getOrDefault } from "../../utils/CommonUtilities";
 import ColourComponent from "../ColourComponent/ColourComponent";
 
 import styles from "./ColourPalette.module.css";
 
 const ColourPalette = (props) => {
-  const Wrappper = styled.div`
-    width: 80%;
-    display: inline-block;
-    margin: 0;
-    padding:0;'
-  `;
 
   if (!props.data) {
     return;
@@ -31,7 +24,7 @@ const ColourPalette = (props) => {
     ></ColourComponent>
   ));
 
-  return <Wrappper className={styles.palette}>{colours}</Wrappper>;
+  return <div className={styles.palette}>{colours}</div>;
 };
 
 export default ColourPalette;
