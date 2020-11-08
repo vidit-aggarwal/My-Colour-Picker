@@ -6,8 +6,6 @@ import style from "./Sidebar.module.css";
 const Sidebar = (props) => {
   if (!props.data || props.data.length < 1) return;
 
-  console.log(props.data);
-
   const content = [];
   props.data.forEach((key, value) => {
     content.push(

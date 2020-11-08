@@ -5,7 +5,6 @@ import ColourComponent from "../ColourComponent/ColourComponent";
 import styles from "./ColourPalette.module.css";
 
 const ColourPalette = (props) => {
-
   if (!props.data) {
     return;
   }
@@ -16,7 +15,7 @@ const ColourPalette = (props) => {
 
   const colours = currentProfile.colours.map((colour) => (
     <ColourComponent
-      key={colour.id}
+      key={"colour__" + colour.id}
       name={colour.name}
       hexCode={colour.hexCode}
       textColour={colour.inverse}
