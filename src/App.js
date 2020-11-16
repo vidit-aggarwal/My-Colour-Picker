@@ -24,7 +24,9 @@ setDefaultBreakpoints(breakpoints);
 const App = () => {
   const [colourDb, setColourDb] = useState(null);
   const [currentProfile, setCurrentProfile] = useState(0);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(
+    window.innerWidth < 481 ? false : true
+  );
 
   const changeProfile = (newProfile) => {
     if (
@@ -57,7 +59,11 @@ const App = () => {
               setOpen={setSidebarOpen}
             ></HamburgerWrapper>
           </Breakpoint>
-          <Sidebar data={colourDb} changeProfile={changeProfile}></Sidebar>
+          <Sidebar
+            data={colourDb}
+            changeProfile={changeProfile}
+            open={sidebarOpen}
+          ></Sidebar>
           <ColourPalette data={colourDb} index={currentProfile}></ColourPalette>
           <ToastContainer
             limit={3}
