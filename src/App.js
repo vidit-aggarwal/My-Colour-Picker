@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
+import {
+  Breakpoint,
+  BreakpointProvider,
+  setDefaultBreakpoints,
+} from "react-socks";
 
 // Importing Components
 import ColourPalette from "./components/ColourPalette/ColourPalette";
@@ -12,6 +17,9 @@ import "react-toastify/dist/ReactToastify.min.css";
 
 // Importing Extra data
 import data from "./data/Color.json";
+import breakpoints from "./utils/Breakpoints";
+
+setDefaultBreakpoints(breakpoints);
 
 const App = () => {
   const [colourDb, setColourDb] = useState(null);
@@ -41,23 +49,27 @@ const App = () => {
 
   if (colourDb)
     return (
-      <div className={style.App}>
-        <HamburgerWrapper
-          open={sidebarOpen}
-          setOpen={setSidebarOpen}
-        ></HamburgerWrapper>
-        <Sidebar data={colourDb} changeProfile={changeProfile}></Sidebar>
-        <ColourPalette data={colourDb} index={currentProfile}></ColourPalette>
-        <ToastContainer
-          limit={3}
-          newestOnTop={true}
-          position="bottom-right"
-          draggable={true}
-          draggablePercent={50}
-          closeButton={false}
-          autoClose={2000}
-        ></ToastContainer>
-      </div>
+      <BreakpointProvider>
+        <div className={style.App}>
+          <Breakpoint m down>
+            <HamburgerWrapper
+              open={sidebarOpen}
+              setOpen={setSidebarOpen}
+            ></HamburgerWrapper>
+          </Breakpoint>
+          <Sidebar data={colourDb} changeProfile={changeProfile}></Sidebar>
+          <ColourPalette data={colourDb} index={currentProfile}></ColourPalette>
+          <ToastContainer
+            limit={3}
+            newestOnTop={true}
+            position="bottom-right"
+            draggable={true}
+            draggablePercent={50}
+            closeButton={false}
+            autoClose={2000}
+          ></ToastContainer>
+        </div>
+      </BreakpointProvider>
     );
   else return <div>Loading</div>;
 };
