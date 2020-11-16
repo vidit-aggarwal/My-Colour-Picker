@@ -8,7 +8,6 @@ import notification from "../Notification/Notification";
 const Wrapper = styled.div`
   background-color: ${(props) => rgb(...hexToRgb(props.hexCode))};
   color: ${(props) => (props.textColour ? props.textColour : "white")};
-  font-size: 1em;
   ${(props) => (props.hasSecondary ? props.shadow : "")}
 `;
 

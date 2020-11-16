@@ -12,6 +12,8 @@ const Wrapper = styled.div`
   &:hover {
     background: url(${(props) => props.backgroundImage});
     background-color: ${(props) => props.backgroundColour};
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     background-size: cover;
     background-position: center;
   }

@@ -4,19 +4,24 @@
   justify-content: center;
   vertical-align: middle;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: inherit;
   outline: black;
   transition: all 0.5s ease-out;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
+  overflow-x: hidden;
 }
 
 .SidebarEntry:hover {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   transition: all 0.5s ease-out;
+}
+
+.SidebarEntry:hover .Content {
+  backdrop-filter: blur(4px) grayscale(0.25) brightness(0.75);
 }
 
 .Content {
   align-self: center;
+  padding: 5px 10px;
+  border-radius: 5px;
 }

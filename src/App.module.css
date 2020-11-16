@@ -1,5 +1,12 @@
-.App{
-    height: 100vh;
-    min-height: 100vh;
-    display: flex;
+.App {
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1920px) {
+  p {
+    font-size: 1.25rem;
+  }
 }
