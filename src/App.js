@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 // Importing Components
 import ColourPalette from "./components/ColourPalette/ColourPalette";
 import Sidebar from "./components/Sidebar/Sidebar";
+import HamburgerWrapper from "./components/Sidebar/Hamburger/HamburgerWrapper";
 
 // Importing CSS
 import style from "./App.module.css";
@@ -15,6 +16,7 @@ import data from "./data/Color.json";
 const App = () => {
   const [colourDb, setColourDb] = useState(null);
   const [currentProfile, setCurrentProfile] = useState(0);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const changeProfile = (newProfile) => {
     if (
@@ -40,6 +42,10 @@ const App = () => {
   if (colourDb)
     return (
       <div className={style.App}>
+        <HamburgerWrapper
+          open={sidebarOpen}
+          setOpen={setSidebarOpen}
+        ></HamburgerWrapper>
         <Sidebar data={colourDb} changeProfile={changeProfile}></Sidebar>
         <ColourPalette data={colourDb} index={currentProfile}></ColourPalette>
         <ToastContainer
