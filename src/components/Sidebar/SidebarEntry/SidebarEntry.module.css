@@ -4,7 +4,7 @@
   justify-content: center;
   vertical-align: middle;
   font-weight: bold;
-  font-size: 2rem;
+  font-size: inherit;
   outline: black;
   transition: all 0.5s ease-out;
   -webkit-text-stroke-width: 1px;
