@@ -23,7 +23,14 @@ const Sidebar = (props) => {
     );
   });
 
-  return <div className={style.Sidebar}>{content}</div>;
+  return (
+    <div
+      open={props.open}
+      className={`${style.Sidebar} ${props.open ? style.Active : style.Close}`}
+    >
+      {content}
+    </div>
+  );
 };
 
 export default Sidebar;
