@@ -7,6 +7,7 @@
   transition: all 0.5s ease-out;
   position: relative;
   text-align: center;
+  background-color: #563d7c;
 }
 
 .Sidebar.Close {
@@ -45,6 +46,7 @@
 @media screen and (max-width: 480px) {
   .Sidebar {
     font-size: 2.5rem;
+    height: 100vh;
   }
   .Sidebar.Active {
     width: 100vw;
