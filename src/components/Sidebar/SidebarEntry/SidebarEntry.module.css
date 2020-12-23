@@ -1,14 +1,12 @@
 .SidebarEntry {
-  color: lightblue;
+  color: #c9c3e6;
   display: inline-flex;
   justify-content: center;
   vertical-align: middle;
-  font-weight: bold;
-  font-size: inherit;
-  outline: black;
+  font-size: 0.75em;
+  letter-spacing: 0.125em;
   transition: all 0.5s ease-out;
   -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
   overflow-x: hidden;
 }
 
@@ -17,11 +15,11 @@
 }
 
 .SidebarEntry:hover .Content {
-  backdrop-filter: blur(4px) grayscale(0.25) brightness(0.75);
+  backdrop-filter: blur(10px) grayscale(0.25) brightness(0.75);
 }
 
 .Content {
   align-self: center;
-  padding: 5px 10px;
+  padding: 0.5em 1em;
   border-radius: 5px;
 }

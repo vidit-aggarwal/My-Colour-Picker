@@ -18,8 +18,9 @@ const Sidebar = (props) => {
         changeProfile={() => {
           props.changeProfile(key.id);
         }}
-        active={props.index === key.id}
-      ></SidebarEntry>
+        active={props.currentProfile === key.id}
+      >
+      </SidebarEntry>
     );
   });
 

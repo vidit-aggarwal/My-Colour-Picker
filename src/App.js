@@ -61,6 +61,7 @@ const App = () => {
           </Breakpoint>
           <Sidebar
             data={colourDb}
+            currentProfile={currentProfile}
             changeProfile={changeProfile}
             open={sidebarOpen}
           ></Sidebar>
